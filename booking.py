@@ -49,14 +49,10 @@ class TestBookingMethods(unittest.TestCase):
         other_ct = Cut(self.ct.expression, 'other_cut_name')
         same_wh = Weight(self.wh.expression, self.wh.name)
         other_wh = Weight(self.wh.expression, 'other_weight_name')
-        squared_wh = Weight('*'.join([
-            self.wh.expression, self.wh.expression]), self.wh.name + '^2')
         self.assertEqual(self.ct, same_ct)
         self.assertNotEqual(self.ct, other_ct)
         self.assertEqual(self.wh, same_wh)
         self.assertNotEqual(self.wh, other_wh)
-        self.wh.square()
-        self.assertEqual(self.wh, squared_wh)
 
 
 if __name__ == '__main__':
